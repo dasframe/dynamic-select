@@ -1,0 +1,53 @@
+{
+    "name": "tresdstudioweb/dynamic-select",
+    "description": "This component simplifies the configuration of data relationships through taxonomies, which means that the information displayed in the second selector dynamically adjusts based on the option selected in the first selector. This provides users with a more intuitive and personalized experience when choosing among different options, as they can view and select only the relevant choices based on their initial selection in the first selector.",
+    "autoload": {
+        "psr-4": {
+            "Tresdstudioweb\\DynamicSelect\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "3dStudioweb | Bogotá Colombia"
+        },
+        {
+            "name": "Somnio Tech | "
+        }
+    ],
+    "support": {
+        "email": "desarrollotic@3dstudioweb.com"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Dynamic Select",
+            "description": "This component simplifies the configuration of data relationships through taxonomies, which means that the information displayed in the second selector dynamically adjusts based on the option selected in the first selector. This provides users with a more intuitive and personalized experience when choosing among different options, as they can view and select only the relevant choices based on their initial selection in the first selector."
+        },
+        "laravel": {
+            "providers": [
+                "Tresdstudioweb\\DynamicSelect\\ServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.24",
+        "pestphp/pest-plugin-laravel": "^2.2",
+        "orchestra/testbench": "^8.13"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tresdstudioweb\\DynamicSelect\\Tests\\": "tests/"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "require": {
+        "statamic/cms": "^4.30"
+    }
+}

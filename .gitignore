@@ -1,0 +1,5 @@
+node_modules
+vendor
+mix-manifest.json
+tests/__fixtures__/users/*.yaml
+tests/__fixtures__/content/*.yaml
