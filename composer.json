@@ -48,6 +48,6 @@
         }
     },
     "require": {
-        "statamic/cms": "^4.30"
+        "statamic/cms": "^4.0"
     }
 }
