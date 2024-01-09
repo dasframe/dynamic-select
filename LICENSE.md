@@ -1,4 +1,4 @@
-the MIT License (MIT)
+The MIT License (MIT)
 
 Copyright (c) 3dstudioweb.com  info@3dstudioweb.com
 
