@@ -24,6 +24,7 @@
 
         <div
         class="flex-1 flex-no-shrink"
+        v-if="secondarySelectItemsFiltered.length > 0"
         >
             <label
                 :for="selectConfig.taxonomies_depend"
