@@ -49,8 +49,8 @@ class DynamicSelectController extends CpController
         foreach($terms as $key => $term){
             $collectTerms->push([
                 'key'   => $term->{$config->taxonomies_depend_field_key},
-                'foreing' => $term->{$config->taxonomies_depend_foreing_key},
-                'label' => $term->{$config->taxonomies_depend_field_label}
+                'foreing' => $term->get($config->taxonomies_depend_foreing_key),
+                'label' => $term->get($config->taxonomies_depend_field_label)
             ]);
         }
         return $collectTerms;

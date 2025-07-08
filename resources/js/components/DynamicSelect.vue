@@ -2,7 +2,7 @@
     <div>
 
         <div
-        class="flex-1 flex-no-shrink"
+        class="flex-1 flex-no-shrink mt-1 mb-1"
         >
             <label
                 :for="selectConfig.taxonomies_one"
