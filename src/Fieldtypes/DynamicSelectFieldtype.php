@@ -4,6 +4,9 @@ namespace Tresdstudioweb\DynamicSelect\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 use Illuminate\Support\Str;
+use GraphQL\Type\Definition\Type;
+use Statamic\Facades\YAML;
+use Illuminate\Support\Facades\Log;
 
 class DynamicSelectFieldtype extends Fieldtype
 {
@@ -134,17 +137,16 @@ class DynamicSelectFieldtype extends Fieldtype
      */
     public function preProcess($data)
     {
-        $items = [];
-
-        if(is_array($data) || is_object($data))
-        {
-        foreach($data as $key => $value)
-        {
-            $items[Str::snake($key)] = $value;
+        if (empty($data)) {
+            return [];
         }
+        
+        if (is_string($data)) {
+            $decoded = json_decode($data, true);
+            return $decoded ?? [];
         }
-
-        return $items;
+        
+        return $data;
     }
 
     /**
@@ -155,16 +157,20 @@ class DynamicSelectFieldtype extends Fieldtype
      */
     public function process($data)
     {
-        $items = [];
-
-        if(is_array($data) || is_object($data))
-        {
-        foreach($data as $key => $value)
-        {
-            $items[Str::snake($key)] = $value;
+        if (is_array($data)) {
+            return json_encode($data);
         }
-        }
-
-        return $items;
+        return $data;
     }
+
+    public function augment($value)
+    {
+        if(is_array($value))
+        {
+            $value = implode(",", $value);
+        }
+
+        return $value;
+    }
+  
 }
