@@ -2,7 +2,7 @@
     <div>
 
         <div
-        class="flex-1 flex-no-shrink"
+        class="flex-1 flex-no-shrink mt-1 mb-1"
         >
             <label
                 :for="selectConfig.taxonomies_one"
@@ -12,7 +12,7 @@
             </label>
             <v-select
                 :id="'taxonomy_one'"
-                v-model="data.taxonomy_one"
+                v-model="data.main_category"
                 :options="firstSelectItems"
                 :reduce="item => item.key"
                 label="label"
@@ -24,16 +24,17 @@
 
         <div
         class="flex-1 flex-no-shrink"
+        v-if="secondarySelectItemsFiltered.length > 0"
         >
             <label
                 :for="selectConfig.taxonomies_depend"
                 class="publish-field-label mb-1"
             >
-                <!-- {{ selectConfig.lb_filter_select }} -->
+                {{ selectConfig.taxonomies_depend }}
             </label>
             <v-select
                 :id="'taxonomies_depend'"
-                v-model="data.taxonomy_depend"
+                v-model="data.child_category"
                 :options="secondarySelectItemsFiltered"
                 :reduce="filter => filter.key"
                 label="label"
@@ -50,8 +51,8 @@ export default {
     data: () => ({
         selectConfig: {},
         data : {
-            taxonomy_depend : null,
-            taxonomy_one : null,
+            child_category : null,
+            main_category : null,
         },
         firstSelectItems: [],
         secondarySelectItems: [],
@@ -75,7 +76,7 @@ export default {
         {
             var self = this;
             self.selectConfig = self.config;
-            self.data['taxonomy_one']   = null;
+            self.data['main_category']   = null;
         },
         mainData()
         {
@@ -90,11 +91,11 @@ export default {
                 self.firstSelectItems = items.data.firstTerms
                 self.secondarySelectItems = items.data.depentTerm
 
-                if(self.value['taxonomy_one'])
+                if(self.value['main_category'])
                 {
-                 self.filteredList(self.value['taxonomy_one']);
-                 self.data['taxonomy_one'] = self.value['taxonomy_one'];
-                 self.data['taxonomy_depend'] = self.value['taxonomy_depend'];
+                 self.filteredList(self.value['main_category']);
+                 self.data['main_category'] = self.value['main_category'];
+                 self.data['child_category'] = self.value['child_category'];
                 }
             })
             .catch(error =>
@@ -105,7 +106,7 @@ export default {
         filteredList(option)
         {
             var self = this;
-            self.data.taxonomy_depend = null
+            self.data.child_category = null
             self.secondarySelectItemsFiltered   = [];
             self.secondarySelectItemsFiltered   = self.secondarySelectItems.filter(opc => opc.foreing == option);
         }
