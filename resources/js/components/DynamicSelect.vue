@@ -81,7 +81,7 @@ export default {
         {
             var self = this;
 
-            const url = cp_url('tresdstudioweb/dynamicselect/getFirstSelectItems');
+            const url = cp_url('dasframe/dynamicselect/getFirstSelectItems');
 
             self.$axios
             .post(url, self.selectConfig)

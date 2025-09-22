@@ -1,6 +1,6 @@
 <?php
 
-namespace Tresdstudioweb\DynamicSelect\Fieldtypes;
+namespace Dasframe\DynamicSelect\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 use Illuminate\Support\Str;

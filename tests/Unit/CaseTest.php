@@ -1,9 +1,9 @@
 <?php
-namespace Tresdstudioweb\DynamicSelect\Tests\Unit;
+namespace Dasframe\DynamicSelect\Tests\Unit;
 
 use Statamic\Facades\Taxonomy;
 use Statamic\Contracts\Taxonomies\TaxonomyRepository;
-use Tresdstudioweb\DynamicSelect\Tests\TestCase;
+use Dasframe\DynamicSelect\Tests\TestCase;
 use Statamic\Taxonomies\Term;
 use Statamic\Facades\Term as FacadeTerms;
 use Illuminate\Support\Facades\Artisan;
@@ -91,7 +91,7 @@ beforeEach(function () {
 });
 
 it('get elements for taxonomies', function(){
-    post(route('statamic.tresdstudioweb.dynamicselect.getFirstSelectItems', [
+    post(route('statamic.dasframe.dynamicselect.getFirstSelectItems', [
             "mode" => "taxonomy",
             "taxonomies_one" => "depto",
             "taxonomies_depend" => "city",

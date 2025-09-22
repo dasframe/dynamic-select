@@ -1,6 +1,6 @@
 <?php
 
-namespace Tresdstudioweb\DynamicSelect\Http\Controllers;
+namespace Dasframe\DynamicSelect\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Statamic\Facades\Term;

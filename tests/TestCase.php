@@ -1,11 +1,11 @@
 <?php
 
-namespace Tresdstudioweb\DynamicSelect\Tests;
+namespace Dasframe\DynamicSelect\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Statamic\Providers\StatamicServiceProvider;
 use Statamic\Statamic;
-use Tresdstudioweb\DynamicSelect\ServiceProvider;
+use Dasframe\DynamicSelect\ServiceProvider;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Collection;
 use Statamic\Facades\Taxonomy;
@@ -42,9 +42,9 @@ abstract class TestCase extends OrchestraTestCase
         parent::getEnvironmentSetUp($app);
 
         $app->make(Manifest::class)->manifest = [
-            'Tresdstudioweb\DynamicSelect' => [
-                'id' => 'Tresdstudioweb\DynamicSelect',
-                'namespace' => 'Tresdstudioweb\\DynamicSelect\\',
+            'Dasframe\DynamicSelect' => [
+                'id' => 'Dasframe\DynamicSelect',
+                'namespace' => 'Dasframe\\DynamicSelect\\',
             ],
         ];
 

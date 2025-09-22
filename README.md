@@ -24,7 +24,7 @@ Run the following command from your project root:
 
 ```  bash 
 
-composer require trestudioweb/dynamic-select
+composer require dasframe/dynamic-select
 
 ```
 

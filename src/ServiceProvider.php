@@ -1,9 +1,9 @@
 <?php
 
-namespace Tresdstudioweb\DynamicSelect;
+namespace Dasframe\DynamicSelect;
 
 use Statamic\Providers\AddonServiceProvider;
-use Tresdstudioweb\DynamicSelect\Fieldtypes\DynamicSelectFieldtype;
+use Dasframe\DynamicSelect\Fieldtypes\DynamicSelectFieldtype;
 
 class ServiceProvider extends AddonServiceProvider
 {

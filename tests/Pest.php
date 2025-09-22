@@ -11,8 +11,8 @@
 |
 */
 
-uses(Tresdstudioweb\DynamicSelect\Tests\TestCase::class)->in('Feature');
-uses(Tresdstudioweb\DynamicSelect\Tests\TestCase::class)->in('Unit');
+uses(Dasframe\DynamicSelect\Tests\TestCase::class)->in('Feature');
+uses(Dasframe\DynamicSelect\Tests\TestCase::class)->in('Unit');
 
 /*
 |--------------------------------------------------------------------------
