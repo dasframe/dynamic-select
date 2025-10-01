@@ -85,7 +85,7 @@ class DynamicSelectFieldtype extends Fieldtype
             'display'   => 'Second Taxonomy',
             'type'      => 'taxonomies',
             'instructions' => 'Select the dependent taxonomy (second taxonomy)',
-           // 'max_items' => 1,
+            'max_items' => 1,
             'if'        => [
                 'mode'  => 'equals taxonomy',
             ],

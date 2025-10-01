@@ -40,6 +40,7 @@
                 label="label"
                 :clearable="true"
                 :searchable="true"
+                :multiple="true"
             ></v-select>
         </div>
     </div>
